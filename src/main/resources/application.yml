@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: vacation-payment
+
+date-api:
+  url: https://isdayoff.ru
