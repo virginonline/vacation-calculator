@@ -46,6 +46,7 @@ class VacationServiceImplTest {
     int vacationDays = 20;
 
     // Act & Assert
-    assertThrows(RuntimeException.class, () -> vacationServiceImplUnderTest.getVacationPayment(averageSalary, vacationDays));
+    assertThrows(RuntimeException.class,
+        () -> vacationServiceImplUnderTest.getVacationPayment(averageSalary, vacationDays));
   }
 }
