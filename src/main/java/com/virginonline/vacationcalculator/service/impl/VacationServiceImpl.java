@@ -5,7 +5,6 @@ import com.virginonline.vacationcalculator.service.VacationService;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalDate;
-import java.util.Objects;
 import java.util.stream.IntStream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -48,7 +47,7 @@ public class VacationServiceImpl implements VacationService {
     }
     long vacationDaysCount = IntStream.range(0, vacationDays)
         .mapToObj(startVacationDate::plusDays)
-        .filter(date -> Objects.equals(dayOffService.isDayOff(date), "0"))
+        .filter(date -> Boolean.parseBoolean(dayOffService.isDayOff(date)))
         .count();
 
     double salary = averageSalary / DAYS_NUM_AVG_MONTHLY * vacationDaysCount;
